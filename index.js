@@ -1,7 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
-const multer = require('multer')
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require("dotenv").config();
@@ -18,7 +17,6 @@ app.use(cors({
     credentials: true,
 }));
 app.use(morgan("dev"));
-app.use("/image", express.static("image"));
 app.use("/api",BookRoute);
 
 app.listen(process.env.PORT, ()=>{
